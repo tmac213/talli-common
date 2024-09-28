@@ -44,6 +44,18 @@ java {
     }
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.tmac213"
+            artifactId = "talli-common"
+            version = "0.1.1"
+
+            from(components["kotlin"])
+        }
+    }
+}
+
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
